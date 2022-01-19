@@ -6,7 +6,8 @@ import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
-public class MyList implements Iterable {
+public class
+MyList implements Iterable {
 
     @Override
     public Iterator iterator() {

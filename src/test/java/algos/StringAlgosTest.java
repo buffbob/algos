@@ -160,4 +160,13 @@ class StringAlgosTest {
 //            System.out.println(s);
 //        }
     }
+
+    @Test
+    void testIsWellFormed() {
+        String s1 = "{{()[]}}"; // true
+        assertTrue(StringAlgos.isWellFormed(s1));
+        String s2 = "{{()[{]}}"; // false
+        assertFalse(StringAlgos.isWellFormed(s2));
+
+    }
 }

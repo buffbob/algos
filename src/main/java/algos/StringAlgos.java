@@ -1,10 +1,9 @@
 package algos;
 
+import algos.list.ListNode;
 import org.w3c.dom.ls.LSOutput;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -182,6 +181,34 @@ public class StringAlgos {
     }
     private static final String [] MAPPING = {
             "0", "1", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ" };
+
+    /**
+     * Determines whether a String has matching brackets, parenthesis, etc...
+     * Uses a deque(stack) to store the left chars and deletes them when a matching right one
+     * is encountered.
+     * "([{}[]])" is well-formed
+     * "({}]" is not well-formed
+     * @param s The String to test.
+     * @return true if is well-formed, false otherwise.
+     */
+    public static boolean isWellFormed(String s ) {
+        Deque<Character> leftChars = new ArrayDeque<>();
+        for(int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            if(c == '(' || c == '{' || c == '['){
+                leftChars.addFirst(c);
+            }else{
+                if(leftChars.isEmpty()) return false;
+                if((c == ')' && leftChars.peekFirst() != '(')
+                    || (c == ']' && leftChars.peekFirst() != '[')
+                    || (c == '}' && leftChars.peekFirst() != '{')) {
+                    return false;
+                }
+             leftChars.removeFirst();
+            }
+        }
+        return leftChars.isEmpty();
+    }
 
     public static void main(String[] args) {
 //        System.out.println(convertFromBase10(9, 2));
