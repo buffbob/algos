@@ -1,4 +1,4 @@
-package algos;
+package algos.strings;
 
 import javax.xml.stream.events.Characters;
 

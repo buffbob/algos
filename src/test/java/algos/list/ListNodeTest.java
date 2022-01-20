@@ -1,14 +1,9 @@
 package algos.list;
-import algos.StringAlgos;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
-import static algos.list.ListHelpers.makeCyclicList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListNodeTest {

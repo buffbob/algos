@@ -1,7 +1,7 @@
 package algos;
 
-import algos.RecursiveStringAlgos;
-import algos.StringAlgos;
+import algos.strings.RecursiveStringAlgos;
+import algos.strings.MoreStringAlgos;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,8 +34,8 @@ class RecursiveStringAlgosTest {
         assertEquals(RecursiveStringAlgos.string2Int(t1), 128);
         assertTrue(RecursiveStringAlgos.string2Int(t2) == 128);
         assertTrue(RecursiveStringAlgos.string2Int(t3) == 99999);
-        assertEquals(StringAlgos.string2Int(t4), -337);
-        assertThrows(NumberFormatException.class, () -> StringAlgos.string2Int(t5));
+        assertEquals(MoreStringAlgos.string2Int(t4), -337);
+        assertThrows(NumberFormatException.class, () -> MoreStringAlgos.string2Int(t5));
 
     }
 

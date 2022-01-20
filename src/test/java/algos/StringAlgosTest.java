@@ -1,7 +1,6 @@
 package algos;
 
-import algos.StringAlgos;
-import org.junit.jupiter.api.BeforeEach;
+import algos.strings.MoreStringAlgos;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -15,9 +14,9 @@ class StringAlgosTest {
         String s1 = "UFOTOFU";
         String s2 = "ufotof";
         String s3 = "ufotofu";
-        assertTrue(StringAlgos.isPalindromic(s1) , "ERROR!!!");
-        assertTrue(StringAlgos.isPalindromic(s3) , "ERROR!!!");
-        assertTrue(!StringAlgos.isPalindromic(s2) , "ERROR!!!");
+        assertTrue(MoreStringAlgos.isPalindromic(s1) , "ERROR!!!");
+        assertTrue(MoreStringAlgos.isPalindromic(s3) , "ERROR!!!");
+        assertTrue(!MoreStringAlgos.isPalindromic(s2) , "ERROR!!!");
     }
 
     @Test
@@ -26,10 +25,10 @@ class StringAlgosTest {
         String s2 = "RacECAR";
         String s3 = "ABba";
         String s4 = "ABbaz";
-        assertTrue(StringAlgos.isPalindromic(s1), "Error!");
-        assertTrue(StringAlgos.isPalindromic(s2), "Error!");
-        assertTrue(StringAlgos.isPalindromic(s3), "Error!");
-        assertTrue(!StringAlgos.isPalindromic(s4), "Error!");
+        assertTrue(MoreStringAlgos.isPalindromic(s1), "Error!");
+        assertTrue(MoreStringAlgos.isPalindromic(s2), "Error!");
+        assertTrue(MoreStringAlgos.isPalindromic(s3), "Error!");
+        assertTrue(!MoreStringAlgos.isPalindromic(s4), "Error!");
     }
     @Test
     void testString2Int() {
@@ -39,11 +38,11 @@ class StringAlgosTest {
         String t3 = "99999";
         String t4 = "-337";
         String t5 = "13k";
-        assertEquals(StringAlgos.string2Int(t1), 128, msg);
-        assertTrue(StringAlgos.string2Int(t2) == 128, msg);
-        assertTrue(StringAlgos.string2Int(t3) == 99999, msg);
-        assertEquals(StringAlgos.string2Int(t4), -337, msg);
-        assertThrows(NumberFormatException.class, () -> StringAlgos.string2Int(t5));
+        assertEquals(MoreStringAlgos.string2Int(t1), 128, msg);
+        assertTrue(MoreStringAlgos.string2Int(t2) == 128, msg);
+        assertTrue(MoreStringAlgos.string2Int(t3) == 99999, msg);
+        assertEquals(MoreStringAlgos.string2Int(t4), -337, msg);
+        assertThrows(NumberFormatException.class, () -> MoreStringAlgos.string2Int(t5));
             }
 
     @Test
@@ -54,10 +53,10 @@ class StringAlgosTest {
         int t4 = -43;
         int t5 = 0;
 
-        assertTrue(StringAlgos.Int2String(t1).equals("123"), "error at " + t1);
-        assertTrue(StringAlgos.Int2String(t2).equals("19"), "error at " + t2);
-        assertTrue(StringAlgos.Int2String(t3).equals("922299"), "error at " + t3);
-        assertTrue(StringAlgos.Int2String(t4).equals("-43"), "error at " + t4);
+        assertTrue(MoreStringAlgos.Int2String(t1).equals("123"), "error at " + t1);
+        assertTrue(MoreStringAlgos.Int2String(t2).equals("19"), "error at " + t2);
+        assertTrue(MoreStringAlgos.Int2String(t3).equals("922299"), "error at " + t3);
+        assertTrue(MoreStringAlgos.Int2String(t4).equals("-43"), "error at " + t4);
 
     }
 
@@ -71,10 +70,10 @@ class StringAlgosTest {
         int b3 = 7;
         String t4 = "1234";
         int b4 = 10;
-        assertEquals(StringAlgos.convertToBase10(t1, b1), 7);
-        assertEquals(StringAlgos.convertToBase10(t2, b2), 38);
-        assertEquals(StringAlgos.convertToBase10(t3, b3), 162);
-        assertEquals(StringAlgos.convertToBase10(t4, b4), Integer.parseInt(t4));
+        assertEquals(MoreStringAlgos.convertToBase10(t1, b1), 7);
+        assertEquals(MoreStringAlgos.convertToBase10(t2, b2), 38);
+        assertEquals(MoreStringAlgos.convertToBase10(t3, b3), 162);
+        assertEquals(MoreStringAlgos.convertToBase10(t4, b4), Integer.parseInt(t4));
     }
 
     @Test
@@ -85,9 +84,9 @@ class StringAlgosTest {
         int base2 = 2;
         int num3 = 99;
         int base3 = 8;
-        assertEquals(StringAlgos.convertFromBase10(num1, base1), "401");
-        assertEquals(StringAlgos.convertFromBase10(num2, base2), "1001");
-        assertEquals(StringAlgos.convertFromBase10(num3, base3), "143");
+        assertEquals(MoreStringAlgos.convertFromBase10(num1, base1), "401");
+        assertEquals(MoreStringAlgos.convertFromBase10(num2, base2), "1001");
+        assertEquals(MoreStringAlgos.convertFromBase10(num3, base3), "143");
     }
     @Test
     void testConvertFromBase1ToBase2() {
@@ -95,22 +94,22 @@ class StringAlgosTest {
         int t1 = 10, t2 = 2;
         String s1 = "15";
         String res = "1111";
-        assertEquals(StringAlgos.convertFromBase1ToBase2(s1,t1,t2), res);
+        assertEquals(MoreStringAlgos.convertFromBase1ToBase2(s1,t1,t2), res);
         // test 2
         int b1 = 5, b2 = 10;
         String input = "1234";
         String output = "194";
-        assertEquals(StringAlgos.convertFromBase1ToBase2(input, b1, b2), output);
+        assertEquals(MoreStringAlgos.convertFromBase1ToBase2(input, b1, b2), output);
         // test3
         int a1 = 3, a2 = 2;
         String s_in = "111";
         String s_out = "1101";
-        assertEquals(StringAlgos.convertFromBase1ToBase2(s_in, a1, a2), s_out);
+        assertEquals(MoreStringAlgos.convertFromBase1ToBase2(s_in, a1, a2), s_out);
         // test4-- do negatives work?
         int c1 = 3, c2 = 2;
         String si = "-111";
         String so = "-1101";
-        assertEquals(StringAlgos.convertFromBase1ToBase2(si, c1, c2), so);
+        assertEquals(MoreStringAlgos.convertFromBase1ToBase2(si, c1, c2), so);
     }
 
     @Test
@@ -119,8 +118,8 @@ class StringAlgosTest {
         char [] test = "dude a of doll a is fred".toCharArray();
         char [] s1 = "atta boy".toCharArray();
         char [] test1 = "boy atta".toCharArray();
-        StringAlgos.reverseStringOfWords(s);
-        StringAlgos.reverseStringOfWords(s1);
+        MoreStringAlgos.reverseStringOfWords(s);
+        MoreStringAlgos.reverseStringOfWords(s1);
         assertArrayEquals(s, test);
         assertArrayEquals(s1, test1);
     }
@@ -130,14 +129,14 @@ class StringAlgosTest {
         char [] t1 = "mot".toCharArray();
         char [] s2 = "tom the turd".toCharArray();
         char [] t2 = "drut eht mot".toCharArray();
-        StringAlgos.reverse(s1,0, 2);
-        StringAlgos.reverse(s2,0, t2.length - 1);
+        MoreStringAlgos.reverse(s1,0, 2);
+        MoreStringAlgos.reverse(s2,0, t2.length - 1);
         assertArrayEquals(s1, t1);
         assertArrayEquals(s2, t2);
         System.out.println("-----"); // testing partial word reverse
         char [] s3 = "0123456789".toCharArray();
         System.out.println(s3);
-        StringAlgos.reverse(s3, 0, 5);
+        MoreStringAlgos.reverse(s3, 0, 5);
         System.out.println(s3);
         assertArrayEquals(s3, "5432106789".toCharArray());
     }
@@ -149,10 +148,10 @@ class StringAlgosTest {
         String t1 = "533";
         String t2 = "5337";
         // test correct size
-        List<String> res = StringAlgos.phoneMnemonics(t2);
-        assertEquals(27, StringAlgos.phoneMnemonics(t1).size());
-        assertEquals(12, StringAlgos.phoneMnemonics(t0).size());
-        assertEquals(16, StringAlgos.phoneMnemonics(t).size());
+        List<String> res = MoreStringAlgos.phoneMnemonics(t2);
+        assertEquals(27, MoreStringAlgos.phoneMnemonics(t1).size());
+        assertEquals(12, MoreStringAlgos.phoneMnemonics(t0).size());
+        assertEquals(16, MoreStringAlgos.phoneMnemonics(t).size());
         assertTrue(res.contains("JEEP"));
         assertFalse(res.contains("JEEZ"));
 
@@ -164,9 +163,9 @@ class StringAlgosTest {
     @Test
     void testIsWellFormed() {
         String s1 = "{{()[]}}"; // true
-        assertTrue(StringAlgos.isWellFormed(s1));
+        assertTrue(MoreStringAlgos.isWellFormed(s1));
         String s2 = "{{()[{]}}"; // false
-        assertFalse(StringAlgos.isWellFormed(s2));
+        assertFalse(MoreStringAlgos.isWellFormed(s2));
 
     }
 }

@@ -1,13 +1,10 @@
-package algos;
-
-import algos.list.ListNode;
-import org.w3c.dom.ls.LSOutput;
+package algos.strings;
 
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class StringAlgos {
+public class MoreStringAlgos {
 
     /**
      * Returns whether the parameter s is a palindrome
