@@ -16,4 +16,5 @@
 <hr>
 
 <h3>Some String algorithms</h3>
+<img src="algo2.png">
 
