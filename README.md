@@ -13,3 +13,7 @@
 <h3>Some array algorithms</h3>
 <img src="algs1.png">
 
+<hr>
+
+<h3>Some String algorithms</h3>
+
