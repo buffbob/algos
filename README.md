@@ -6,4 +6,4 @@
   <li>Princeton Course</li>  
 </ul>
 
-<img src="./screenshot.png">
+<img src="./src/main/resources/screenshot.png">
